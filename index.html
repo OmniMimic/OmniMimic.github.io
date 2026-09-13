@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>OmniMimic · Multi-style Omnidirectional Quadruped Locomotion</title>
+  <meta name="description" content="OmniMimic learns a single multi-gait policy from directionally limited animal demonstrations. Watch Trot, Pace, Canter and Pronk deployed directly on Unitree Go2 without fine-tuning.">
+  <link rel="canonical" href="https://omnimimic.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OmniMimic">
+  <meta property="og:description" content="Dynamics-completed Motion Augmentation for Multi-style Omnidirectional Quadruped Locomotion.">
+  <meta property="og:url" content="https://omnimimic.github.io/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b7755'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='white' stroke-width='6'/%3E%3Cpath d='M32 7v9M32 48v9M7 32h9M48 32h9' stroke='white' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="wordmark" href="#main" aria-label="OmniMimic home">Omni<span>Mimic</span><span class="brand-cross" aria-hidden="true">✳</span></a>
+      <div class="nav-links"><a href="#demo">Demo</a><a href="#overview">Overview</a><a href="#method">Method</a><a href="#more-demos">More demos</a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="paper-title">
+      <p class="eyebrow">Animal demonstrations → real-world locomotion</p>
+      <h1 id="paper-title"><span class="project-name">Omni<span>Mimic</span></span><span class="paper-title">Dynamics-completed Motion Augmentation for<br class="desktop-break"> Multi-style Omnidirectional Quadruped Locomotion</span></h1>
+      <p class="hero-description">One policy. Four gait styles. Forward, backward, lateral, and turning motion.</p>
+      <div class="hero-actions"><a class="button primary" href="#demo" data-play-main><span class="play-symbol" aria-hidden="true">▶</span> Watch the demo</a><a class="button secondary" href="#method">Explore the framework <span aria-hidden="true">↗</span></a></div>
+      <div class="facts" aria-label="Key properties"><span>Unitree Go2</span><span>Single multi-gait policy</span><span>Direct deployment · no fine-tuning</span></div>
+    </section>
+
+    <section class="main-demo wrap" id="demo" aria-labelledby="demo-title">
+      <div class="section-heading compact"><div><p class="eyebrow">Real-world deployment</p><h2 id="demo-title">Four gaits. One policy.</h2></div><span class="small-note">Trot · Pace · Canter · Pronk</span></div>
+      <div class="hero-video-shell">
+        <video id="main-video" controls playsinline muted loop preload="metadata" poster="assets/posters/main-demo.jpg" aria-label="Four-panel outdoor demonstration. Top left Trot, top right Pace, bottom left Canter, bottom right Pronk.">
+          <source src="assets/videos/main-demo.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/videos/main-demo.mp4">Download the main demo.</a>
+        </video>
+      </div>
+      <div class="video-caption"><p>Simulation-trained policy, deployed directly on the real robot without fine-tuning.<br><span>Real-time playback (1×). Shorter clips hold their final frame.</span></p><a class="text-link" href="assets/videos/main-demo-4k.mp4" download="OmniMimic-four-gaits-4K.mp4">Download 4K video <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="overview section-pad" id="overview" aria-labelledby="overview-title">
+      <div class="wrap narrow"><p class="eyebrow">Overview</p><h2 id="overview-title">Natural gait styles,<br> beyond the demonstrated directions.</h2>
+        <p>Animal demonstrations provide natural, distinctive gait styles, but their narrow directional coverage leaves little style-consistent supervision for backward, lateral, and turning commands.</p>
+        <p>OmniMimic combines temporal reversal, constrained dynamics completion, and sagittal reflection to construct robot-specific motion and physical supervision beyond the observed directions. A demonstration-guided curriculum progressively expands the command distribution, while a shared actor and softly mixed residual experts learn a single policy for four gaits.</p>
+        <p>The deployed actor uses robot state, commands, and gait code—without reference motions, physical labels, or guidance torques.</p>
+      </div>
+      <div class="wrap results-strip" aria-label="Selected simulation results">
+        <div class="result-item"><strong>63.1<span>%</span></strong><p>Lower command-tracking RMSE</p><small>Uniform Cartesian command grid</small></div>
+        <div class="result-item"><strong>12.9<span>%</span></strong><p>Lower foot-position RMSE</p><small>Forward and backward reference velocities</small></div>
+        <div class="result-context"><span class="eyebrow">Simulation comparison</span><p>Four-gait mean relative to the matched APEX baseline.</p><small>These numbers describe simulation evaluations, not the real-world videos.</small></div>
+      </div>
+    </section>
+
+    <section class="method wrap section-pad" id="method" aria-labelledby="method-title">
+      <div class="section-heading"><div><p class="eyebrow">The framework</p><h2 id="method-title">From limited demonstrations<br> to omnidirectional control.</h2></div></div>
+      <figure class="framework-figure"><a href="assets/images/framework.png" target="_blank" rel="noopener" aria-label="Open the OmniMimic framework figure at full resolution"><img src="assets/images/framework.png" width="2800" height="1575" loading="lazy" alt="OmniMimic framework: dynamics-completed augmentation supplies physical labels; demonstration-guided commands expand during training; a shared-residual policy learns four gaits with training-only physics supervision and actor-only deployment."></a><figcaption>OmniMimic framework. Physical supervision guides training; only the actor is retained at deployment. <a href="assets/images/framework.png" target="_blank" rel="noopener">View full resolution ↗</a></figcaption></figure>
+      <div class="method-steps">
+        <article><div class="step-label">01 <span>DMA</span></div><h3>Dynamics-completed<br> Motion Augmentation</h3><p>Time reversal and sagittal reflection extend the motion directions. Constrained dynamics completion supplies contact-force and torque labels for training-only physical supervision.</p></article>
+        <article><div class="step-label">02 <span>DOCE</span></div><h3>Demonstration-guided<br> Omnidirectional Command Expansion</h3><p>Training begins near the demonstrated velocities, then progressively expands toward the target command ranges for forward, lateral, and yaw motion.</p></article>
+        <article><div class="step-label">03 <span>SMP</span></div><h3>Shared-residual<br> Multi-gait Policy</h3><p>A shared actor produces the complete action. A gait-conditioned soft gate mixes bounded residual corrections, preserving distinct styles within one policy.</p></article>
+      </div>
+    </section>
+
+    <section class="more-demos section-pad" id="more-demos" aria-labelledby="more-title">
+      <div class="wrap"><div class="section-heading"><div><p class="eyebrow">More real-world demos</p><h2 id="more-title">Across gaits and settings.</h2></div><p class="section-intro">Additional indoor and outdoor recordings.<br>Original playback speed, without fine-tuning.</p></div>
+        <div class="featured-demos">
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/indoor-four-gaits.jpg" aria-label="Indoor forward locomotion with four gait styles"><source src="assets/videos/indoor-four-gaits.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Four gaits indoors</h3><span>Indoor</span></div><p>Forward locomotion with four distinct styles.</p></article>
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/asphalt-four-gaits.jpg" aria-label="Four gait styles on outdoor asphalt"><source src="assets/videos/asphalt-four-gaits.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Four gaits on asphalt</h3><span>Outdoor</span></div><p>Multi-gait deployment on paved ground.</p></article>
+        </div>
+        <div class="demo-grid">
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/stone-trot-pace-canter.jpg" aria-label="Trot, Pace, and backward Canter on stone paving"><source src="assets/videos/stone-trot-pace-canter.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Trot, Pace &amp; Canter</h3></div><p>Stone paving · includes backward Canter.</p></article>
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/stone-canter.jpg" aria-label="Canter on stone paving"><source src="assets/videos/stone-canter.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Canter</h3></div><p>Forward motion on stone paving.</p></article>
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/pronk-1.jpg" aria-label="Forward Pronk, first sequence"><source src="assets/videos/pronk-1.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Pronk</h3></div><p>Forward motion · sequence 1.</p></article>
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/backward-pace-forward-canter.jpg" aria-label="Backward Pace followed by forward Canter on grass"><source src="assets/videos/backward-pace-forward-canter.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Pace → Canter</h3></div><p>Grass · backward Pace, then forward Canter.</p></article>
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/forward-pace.jpg" aria-label="Forward Pace on grass"><source src="assets/videos/forward-pace.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Pace</h3></div><p>Forward locomotion on grass.</p></article>
+          <article class="demo-card"><div class="video-shell"><video controls playsinline muted loop preload="none" poster="assets/posters/pronk-2.jpg" aria-label="Forward Pronk on grass, second sequence"><source src="assets/videos/pronk-2.mp4" type="video/mp4"></video></div><div class="card-heading"><h3>Pronk</h3></div><p>Forward motion on grass · sequence 2.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap site-footer"><a class="wordmark" href="#main">Omni<span>Mimic</span></a><p>Project-page inspiration: <a href="https://marmotlab.github.io/APEX/" target="_blank" rel="noopener">APEX</a>.<br><a href="https://github.com/OmniMimic/OmniMimic.github.io">Website source</a></p></footer>
+</body>
+</html>

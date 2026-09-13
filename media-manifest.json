@@ -1,0 +1,162 @@
+{
+  "playback_speed": "1x",
+  "audio": "omitted in web exports",
+  "main_demo": {
+    "layout": [
+      [
+        "Trot",
+        "Pace"
+      ],
+      [
+        "Canter",
+        "Pronk"
+      ]
+    ],
+    "shorter_clips": "hold final frame",
+    "duration_seconds": 23.366667
+  },
+  "sources": [
+    {
+      "file": "全向步态展示/outdoor_trot.mov",
+      "duration": 17.866667,
+      "sha256": "b8e23a62a6664aafa79cd1cc34e3c203bacc4c5b5345e881a250ef283d228c50"
+    },
+    {
+      "file": "全向步态展示/outdoor_pace.mov",
+      "duration": 18.854603,
+      "sha256": "db2c0087061c01259604a6ba0f46fd42353c824db61a71e6006b6428d88992fd"
+    },
+    {
+      "file": "全向步态展示/outdoor_canter.mov",
+      "duration": 18.666667,
+      "sha256": "ae306ea138027d8acabd71bfc3e61679b689295815bbb9a7dd36cec7a29de7db"
+    },
+    {
+      "file": "全向步态展示/outdoor_pronk.mov",
+      "duration": 23.366667,
+      "sha256": "8bd45550e6aa0d172cc900431436abbb1f5e87a2e71c3a4987062374459f8046"
+    },
+    {
+      "file": "前进步态展示（截图用）_1/indoor_front.mov",
+      "duration": 39.233333,
+      "sha256": "164e1890ac03330a908d5949428889641c0c17b78eafbdbfa80ca5eced33e24c"
+    },
+    {
+      "file": "前进步态展示（截图用）_1/柏油路4步态.mov",
+      "duration": 38.333333,
+      "sha256": "04f3d030f9ee572210880f567fdce624e86c9f9b03ad522584befab63a4b2cef"
+    },
+    {
+      "file": "前进步态展示（截图用）_1/stone_trot_pace+back_canter.mov",
+      "duration": 23.633333,
+      "sha256": "8c702724bcae6869053eeb4e16651055a93596cc90e3455cfab01d6d23ce7f51"
+    },
+    {
+      "file": "前进步态展示（截图用）_1/stone_canter.mov",
+      "duration": 6.233333,
+      "sha256": "2df0ed5a46d14b8b1c41ddcf1658bbfff2b6468cdf7c3a0f8afa9f4af2db82cd"
+    },
+    {
+      "file": "前进步态展示（截图用）_1/front_pronk.mov",
+      "duration": 9.8,
+      "sha256": "192f3890bb38b44991bc07e3fc163baafbcf51a53c72f21cd6e9ec8187c6f6f5"
+    },
+    {
+      "file": "前进步态展示（截图用）_2/back_pace2_front_canter.mov",
+      "duration": 5.712109,
+      "sha256": "4b9f03fe7f16ff2f4664b258c887cd761fcbe16448a7b30e0b5cf6e723405c6f"
+    },
+    {
+      "file": "前进步态展示（截图用）_2/front_pace.mov",
+      "duration": 5.966667,
+      "sha256": "eed39f5534179166ad324678cad8dd93aff7d311234debeabafe16979c946747"
+    },
+    {
+      "file": "前进步态展示（截图用）_2/front_pronk.mov",
+      "duration": 6.066667,
+      "sha256": "149b92ffce3476520a4b12f1aec5904b62a5dac8fffd784d224b9709019fab01"
+    }
+  ],
+  "exports": [
+    {
+      "file": "asphalt-four-gaits.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 38.333333,
+      "size_bytes": 29381896,
+      "sha256": "09d84192fdeb964ae2c41459296e414d6e96dfcf1eb44dc8d02d9c2766e68bbb"
+    },
+    {
+      "file": "backward-pace-forward-canter.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.7,
+      "size_bytes": 4872769,
+      "sha256": "1a9a85e79da910163fb0ba8abb6dd05cbf3ef7b2a99c782cafbc4ad444f4b3b4"
+    },
+    {
+      "file": "forward-pace.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 5.966667,
+      "size_bytes": 5014538,
+      "sha256": "230b1250f43a98c3cfd248eb5e79a810e5f0229f124bff2275edc4f4f151c057"
+    },
+    {
+      "file": "indoor-four-gaits.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 39.233333,
+      "size_bytes": 29181633,
+      "sha256": "4146323d1dc84f89d04602b231440ed6765bb7e3a0012ee44101204eca36ad27"
+    },
+    {
+      "file": "main-demo-4k.mp4",
+      "width": 3840,
+      "height": 2160,
+      "duration": 23.366016,
+      "size_bytes": 53667453,
+      "sha256": "b858ac157c65b7fe6ed4b8c5e120e2c908ea367da5674ac5027241e154fb8235"
+    },
+    {
+      "file": "main-demo.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 23.366016,
+      "size_bytes": 23138360,
+      "sha256": "548e18b1775d07907fd22403815b0ee00c90c22493f6a64c01cbffd4657ea751"
+    },
+    {
+      "file": "pronk-1.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 9.8,
+      "size_bytes": 7847423,
+      "sha256": "6c7a3b7499e73334e0a32f28919c68599ff84e8eec12dc2dcaf56aa9ddc2a658"
+    },
+    {
+      "file": "pronk-2.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.066667,
+      "size_bytes": 5163396,
+      "sha256": "5270a227d8416e98c531d4e150148cd79bac6f4524cf1682e6e621c34897bc01"
+    },
+    {
+      "file": "stone-canter.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.233333,
+      "size_bytes": 5204674,
+      "sha256": "2f1c93ef77654b88ecdcb25dc2a1a40180ec93b45ad9f11a0226fbf373857713"
+    },
+    {
+      "file": "stone-trot-pace-canter.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 23.633333,
+      "size_bytes": 18232700,
+      "sha256": "77b9f087f10280c694de0313a37d5f3215744f53cce4ba0099aa4cca17da97b8"
+    }
+  ]
+}
