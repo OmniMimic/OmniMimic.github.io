@@ -36,3 +36,17 @@ python3 scripts/prepare_media.py --source-root /path/to/recordings --work-dir /p
 Project-page organization was inspired by [APEX](https://marmotlab.github.io/APEX/). The website implementation and OmniMimic assets are separate; no APEX videos, author details, or research claims are reused.
 
 The repository hosts the website only. It is not a release of the policy-training implementation.
+
+## Website analytics
+
+Page views and outbound/download link clicks are measured by self-hosted Matomo
+at `https://209.33.174.170/matomo/` (site ID `1`). The tracker is loaded
+asynchronously and browser cookies are disabled. The configured analytics server
+records full visitor IP addresses, approximate IP-based locations, and visit
+timestamps. Reports use the `Asia/Shanghai` time zone. IP addresses are not a
+reliable count of individual people. Statistics begin after this integration;
+earlier visits cannot be reconstructed by the tracker.
+
+Matomo credentials are managed on the analytics server and are never included in
+this repository. To disconnect tracking, remove the block marked
+`Matomo Analytics` from `index.html`.
